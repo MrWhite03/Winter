@@ -21,6 +21,8 @@ def get_all_filenames(path):
 
 	#Recursively go through all files in current directory and all subdirectories
 	for rel_filename in os.listdir(path):
+		#Skip all hidden folders and files
+		#  --They are not needed and result in PERMISSION DENIED
 		if rel_filename.startswith('.'):
 			continue
 		file_path = path + '/' + rel_filename
